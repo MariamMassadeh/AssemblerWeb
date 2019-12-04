@@ -1,0 +1,231 @@
+﻿html {
+    background-color: #f8f8f8;
+    cursor: default;
+}
+
+nav {
+    background: #563d7c;
+    margin: 0 auto;
+    padding: 0;
+    display: block;
+    position: relative;
+}
+
+    nav ul {
+        margin: 0 auto;
+        padding: 0;
+        list-style: none;
+        display: block;
+    }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+        }
+
+            nav ul li:last-child {
+                float: right;
+            }
+
+.logo {
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.about {
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.aboutP {
+    position: absolute;
+    background-color: #563d7cd9;
+    color: #fff;
+    z-index: 3;
+    padding: 25px;
+    font-size: 0.8rem;
+    border-radius: 0px 0px 5px 5px;
+    width: 100%;
+    display: none;
+}
+
+fieldset {
+    padding: 20px 30px;
+}
+
+legend {
+    color: #563d7c;
+    padding: 15px 0px 0px 0px;
+    margin: 0;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+}
+
+.effected_legend {
+    padding: 0;
+    color: #fff;
+    background: linear-gradient(to right, #e72a3a 10%, #fff 50%, #5bdaff 60%);
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 1.5s linear infinite;
+    display: inline-block;
+}
+
+@keyframes textclip {
+    to {
+        background-position: 200% center;
+    }
+}
+
+.letter {
+    background: #f0f0f0;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    margin: 26px 0;
+    min-height: 400px;
+    padding: 0;
+    position: relative;
+}
+
+    .letter:before, .letter:after {
+        content: "";
+        height: 98%;
+        position: absolute;
+        width: 100%;
+        z-index: 0;
+    }
+
+    .letter:before {
+        background: #f0f0f0;
+        box-shadow: 0 0 8px rgba(0,0,0,0.2);
+        left: -5px;
+        top: 4px;
+        transform: rotate(-2.5deg);
+    }
+
+    .letter:after {
+        background: #f0f0f0;
+        box-shadow: 0 0 3px rgba(0,0,0,0.2);
+        right: -3px;
+        top: 1px;
+        transform: rotate(1.4deg);
+    }
+
+textarea {
+    background-color: #f0f0f0;
+    border: none;
+    width: 100%;
+    min-height: 400px;
+    resize: none;
+    outline: none;
+    padding: 5px 10px;
+    margin: 0;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 2;
+}
+
+
+input[type=button] {
+    background-color: #563d7c;
+    border: none;
+    color: #fff;
+    padding: 5px 15px;
+    float: right;
+    margin: 5px;
+}
+
+    input[type=button]:nth-child(1) {
+        margin-right: 0;
+    }
+
+    input[type=button]:hover {
+    }
+
+.sub_legend {
+    font-size: 1.2rem;
+}
+
+table {
+    width: 100%;
+}
+
+    table tr {
+    }
+
+        table tr td {
+            text-align: center;
+            border: 1px solid #563d7c;
+            padding: 10px 5px;
+            color: #563d7c;
+        }
+
+#txtarea_PASSI {
+    max-height: 250px;
+    min-height: 250px;
+}
+
+#txtarea_PASSII {
+}
+
+input[type="file"] {
+    font-size: 0.6rem;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+b {
+    color: #563d7c;
+    font-size: 0.7rem;
+}
+
+.animate_kindly {
+    animation: flipper 3s ease-in 4s infinite;
+    -ms-animation: flipper 3s ease-in 4s infinite;
+    -webkit-animation: flipper 3s ease-in 4s infinite;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    display: inline-block;
+    color: #CA2E9C;
+}
+
+@-webkit-keyframes flipper {
+    0% {
+        -webkit-transform: perspective(300px) rotateY(0deg);
+    }
+
+    15%, 100% {
+        -webkit-transform: perspective(300px) rotateY(360deg);
+    }
+}
+
+@-ms-keyframes flipper {
+    0% {
+        -moz-transform: perspective(300px) rotateY(0deg);
+    }
+
+    15%, 100% {
+        -moz-transform: perspective(300px) rotateY(360deg);
+    }
+}
+
+@keyframes flipper {
+    0% {
+        transform: perspective(300px) rotateY(0deg);
+    }
+
+    15%, 100% {
+        transform: perspective(300px) rotateY(360deg);
+    }
+}

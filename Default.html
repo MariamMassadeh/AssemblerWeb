@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Assembler-Mariam Massadeh</title>
+
+    <!-- meta data -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="JS-based 2-pass assembler">
+    <meta name="author" content="Mariam Massadeh">
+
+    <!-- -->
+    <link rel="apple-touch-icon" sizes="57x57" href="icon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="icon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="icon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="icon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="icon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="icon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="icon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="icon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="icon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="icon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
+    <link rel="manifest" href="icon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="icon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- CSS Files -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="CSS.css" rel="stylesheet">
+    <script type="text/javascript" src="JS/jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="JS/Assembler.js"></script>
+
+</head>
+<body>
+    <div class="row">
+        <div class="col col-12 col-lg-12 col-md-12 col-sm-12">
+            <nav>
+                <ul>
+                    <li><img class="logo" src="favicon.ico" /></li>
+                    <li></li>
+                    <li>
+                        <img class="about" src="white-arrow.png" onclick="$('.aboutP').slideToggle();" />
+                    </li>
+                </ul>
+                <p class="aboutP">
+                    Student Name: Mariam Khaled Massadeh
+                    <br />
+                    Jordan University of Science and Technology
+                    <br />
+                    https://www.linkedin.com/in/mariammassadeh/
+                    <br />
+                    Doctor Khaldoun Mhaidat
+                    <br />
+                    Project Title: ARM Assembler
+                    <br />
+                    Project Description: A JS-based 2-pass assembler.
+                    <br />
+                    A two pass assembler does two passes over the source file;
+                    <br />
+                    (note that the second pass can be over an intermediate file generated in the first pass of the assembler).
+                    <br />
+                    In the first pass:
+                    <br />
+                    it looks for label definitions and introduces them in the symbol table;
+                    <br />
+                    symbol table is a dynamic table which includes the label name and address for each label in the source program.
+                    <br />
+                    In the second pass:
+                    <br />
+                    after the symbol table is completed, it does the actual assembly by translating the operations into machine codes.
+                </p>
+            </nav>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-3 col-lg-3 col-md-4 col-sm-12">
+            <fieldset>
+                <legend>Input Code </legend>
+                <div class="row">
+                    <div class="col col-12 col-lg-12 col-md-12 col-sm-12">
+                        <b>
+                            <i class="animate_kindly">Kindly</i>, Upload Your File ..
+                            <input id="upload_files" type="file" value="Upload File" onchange="upload_view()" />
+                            <script>
+                                function upload_view() {
+                                    var file_name = $('#upload_files').val();
+                                    $('#textarea_input').load(file_name);
+                                }
+                            </script>
+                        </b>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-12 col-lg-12 col-md-12 col-sm-12">
+                        <div class="letter">
+                            <textarea id="textarea_input" readonly></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-12 col-lg-12 col-md-12 col-sm-12">
+                        <input type="button" value="PASS II" />
+                        <input type="button" value="PASS I" />
+                    </div>
+                </div>
+            </fieldset>
+
+        </div>
+
+        <div class="col col-9 col-lg-9 col-md-8 col-sm-12">
+            <fieldset>
+                <legend>Output Code</legend>
+                <div class="row">
+                    <div class="col col-6 col-lg-6 col-md-6 col-sm-12">
+                        <fieldset>
+                            <legend class="sub_legend effected_legend">PASS I</legend>
+                            <div class="row">
+                                <div class="col col-12 col-lg-12 col-md-12 col-sm-12">
+                                    <textarea id="txtarea_PASSI" readonly> </textarea>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend class="sub_legend effected_legend">PASS II</legend>
+                            <div class="row">
+                                <div class="col col-12 col-lg-12 col-md-12 col-sm-12">
+                                    <textarea id="txtarea_PASSII" readonly></textarea>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="col col-6 col-lg-6 col-md-6 col-sm-12">
+                        <fieldset>
+                            <legend class="sub_legend effected_legend">Registers</legend>
+                            <table>
+                                <tr>
+                                    <td>USER<br />(USR)</td>
+                                    <td>Supervisor<br />(SVC)</td>
+                                    <td>Interrupt<br />(IRQ)</td>
+                                    <td>Fast Interrupt<br />(FIRQ)</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">r0</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">r1</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">r2</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">r3</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">r4</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">r5</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">r6</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">r7</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">r8</td>
+                                    <td>r8_firq</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">r9</td>
+                                    <td>r9_firq</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">r10</td>
+                                    <td>r10_firq</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">r11(fp)</td>
+                                    <td>r11_firq</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">r12(ip)</td>
+                                    <td>r12_firq</td>
+                                </tr>
+                                <tr>
+                                    <td>r13 (sp)</td>
+                                    <td>r13_svc</td>
+                                    <td>r13_irq</td>
+                                    <td>r13_firq</td>
+                                </tr>
+                                <tr>
+                                    <td>r14 (lp)</td>
+                                    <td>r14_svc</td>
+                                    <td>r14_irq</td>
+                                    <td>r14_firq</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">r15 (pc)</td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                    </div>
+                </div>
+
+
+            </fieldset>
+        </div>
+    </div>
+</body>
+</html>
